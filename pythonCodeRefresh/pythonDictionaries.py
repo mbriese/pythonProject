@@ -43,7 +43,37 @@ print(f" The avg attendance is {classAttendanceValues}")
 
 # Destructuring Variables and tuples
 # Tuples can be assigned to variables
+<<<<<<< HEAD
 print("Desctructering segment")
 t = 1, 2
 x, y = t
 print(x, y)
+=======
+print("Destructuring segment")
+t = 1, 2
+x, y = t
+print(x, y)
+
+# remember this dictionary
+# studentAttendance = {"Bob": 100, "Fred": 95, "John": 80, "Zach": 75}
+# turn studentAttendance into a list
+print(list(studentAttendance.items()))
+
+for student, attendance in studentAttendance.items():
+    print(f"{student} : {attendance}")
+
+for t in studentAttendance.items():
+    # print(f"Destructuring list {student}: {attendance}")
+    print(t)
+
+peopleAndProfessions = [("Tom", 47, "Contractor"), ("Jim", 30, "Chef"), ("Chris", 25, "Salesman"),
+                        ("A", 15, "Model")]
+# if I don't care about age then I can use _ instead of identifying the age
+for name, _, profession in peopleAndProfessions:
+    print(f"Name: {name}, Profession: {profession}")
+
+# take apart elements in a list
+head, *tail = [1, 2, 3, 4, 5]
+print(head)
+print(*tail)
+>>>>>>> eb3025c (format fixes)
