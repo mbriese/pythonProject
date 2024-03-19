@@ -110,5 +110,5 @@ print(f"using a dictionary {numsDictionary} for params in sum function) ")
 # problems with dictionary - try later anotherDictionary = {"a": 15, "b": 25, "c": 1}
 anotherList = [15, 25, 1]
 # print("Sum: ", apply(*anotherDictionary, operator="+"))
-print("Sum: ", apply(15, 25, 1, operator = "+") )
-print("Multiply: ", apply(15, 25, 1, operator = "*"))
+print("Sum: ", apply(15, 25, 1, operator="+"))
+print("Multiply: ", apply(15, 25, 1, operator="*"))

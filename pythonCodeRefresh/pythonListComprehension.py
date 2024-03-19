@@ -21,7 +21,5 @@ for friends in friendsList:
         starts_S.append(friends)
 print(friendsList)
 print(starts_S)
-starts_WithS = [myfriend for myfriend in friendsList if myfriend.startswith("S") ]
+starts_WithS = [myfriend for myfriend in friendsList if myfriend.startswith("S")]
 print(starts_WithS)
-
-
