@@ -1,5 +1,5 @@
 # This program takes user age as input and converts age to number of months
-import datetime
+from datetime import datetime
 
 ageInput: str = input("What is your age in years? ")
 months = int(ageInput) * 12
@@ -17,9 +17,3 @@ minutes = int(days) * 24 * 60
 # minutes conversion to seconds is minutes * 60 sec
 seconds = int(minutes) * 60
 print(f"You have been alive {minutes} minutes or {seconds} seconds")
-
-dateOfBirth = input("what is your date of birth in dd/mm/yyyy format? ")
-actualDOB = (datetime.strptime(dateOfBirth, '%d/%m/%Y'))
-print(f"your DOB is {actualDOB}")
-actualAgeToday = datetime.now() - actualDOB
-print(f"actual age today is {actualAgeToday}")
