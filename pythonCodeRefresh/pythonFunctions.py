@@ -95,7 +95,8 @@ print(divide_result(15, 0))
 
 # multiple arguments sent to functions
 print("functions with unknown number of arguments")
-print(f"multiply variable number of arguments sent as params (1 ,3, 5) to multiply is {multiplyMultipleArgs(1, 3, 5)}")
+print(
+	f"multiply variable number of arguments sent as params (1 ,3, 5) to multiply is {multiplyMultipleArgs(1, 3, 5)}")
 
 # destructuring lists into functions
 numsList = [3, 5]
@@ -112,3 +113,25 @@ anotherList = [15, 25, 1]
 # print("Sum: ", apply(*anotherDictionary, operator="+"))
 print("Sum: ", apply(15, 25, 1, operator="+"))
 print("Multiply: ", apply(15, 25, 1, operator="*"))
+
+
+# args and kwargs in functions to unpack the collected arguments
+def named(**kwargs):
+    print(kwargs)
+
+
+details = {"name": "Bob", "age": "25"}
+named(**details)
+
+# *args for named arguments and kwargs for positional arguments
+def print_nicely(**kwargs):
+    named(**kwargs)
+    for arg, value in kwargs.items():
+        print(f"arg: {arg} value: {value}")
+   
+def both(*args, **kwargs):
+    print(args)
+    print(kwargs)
+        
+print_nicely(name="Bob", age=25)
+both(1, 3, 5, name="Bob", age=25)
