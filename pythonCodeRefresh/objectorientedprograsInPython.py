@@ -1,10 +1,9 @@
 # calculate the average of a students grades
 # student = {"name": "Bob", "grades": (89, 90, 93, 78, 90)}
-# def average(sequence):
-# return sum(sequence)/len(sequence)
-# print(average(student["grades"]))
-
-# we use classes in OOP
+#  def average(sequence):
+#  return sum(sequence)/len(sequence)
+#  print(average(student["grades"]))
+#   we use classes in OOP
 # methods inside classes
 class Student:
 	def __init__(self, name, grades):
