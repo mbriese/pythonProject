@@ -1,3 +1,7 @@
+class TooManyPagesReadError(ValueError):
+	pass
+
+
 class Book:
 	TYPES = ('hardcover', 'paperback', 'audio')
 	
@@ -12,16 +16,19 @@ class Book:
 		return f"<Book {self.name}, {self.book_type}, {self.page_count} weighing {self.weight}grams>"
 
 	def read(self, pages):
-		self.pages_read += pages
-		print(f"You have now read {self.pages_read} out of {self.page_count}")
+		if self.pages_read + pages > self.page_count:
+			raise ValueError(f"You tried to read {self.pages_read + pages} and exceeds the pages in the book {self.page_count}")
+		else:
+			self.pages_read += pages
+			print(f"Book: {self.name} Pages read: {self.pages_read}")
 
 	@classmethod
-	def hardcover(cls, name, page_weight):
-		return Book(name, Book.TYPES[0], page_weight+100)
+	def hardcover(cls, name, page_count, page_weight):
+		return Book(name, Book.TYPES[0], page_count, page_weight+100)
 	
 	@classmethod
-	def paperback(cls, name, page_weight):
-		return Book(name, Book.TYPES[1], page_weight)
+	def paperback(cls, name, page_count, page_weight):
+		return Book(name, Book.TYPES[1], page_count, page_weight)
 
 
 print(Book.TYPES)
@@ -30,3 +37,13 @@ comicBook = Book("Archie Comic", 50, "paperback", 50)
 
 print(book.name)
 print(comicBook.name)
+python101 = Book("Python 101", 50, "hardcover", 1000)
+python101.read(35)
+
+python102 = Book("Python 102", 150, "paperback", 200)
+try:
+	python102.read(75)
+	python102.read(25)
+	python102.read(51)
+except TooManyPagesReadError as e:
+	print(e)
