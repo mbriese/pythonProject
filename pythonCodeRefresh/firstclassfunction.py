@@ -1,3 +1,6 @@
+from operator import itemgetter
+
+
 def divide(dividend, divisor):
     if divisor == 0:
         raise ZeroDivisionError("Divisor cannot be 0")
@@ -29,6 +32,8 @@ friends = [
 def get_friends_name(friend):
     return friend["name"]
 
+
+print(search(friends, "Rolf Smith", itemgetter("name")))
 
 try:
     print(search(friends, "Rolf Smith", get_friends_name))
